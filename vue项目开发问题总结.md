@@ -70,6 +70,7 @@
       ```
       const router = new VueRouter({
         mode: 'history',
+        base:'/wxbi-vue/',
         routes: [...]
       })
       ```
