@@ -73,16 +73,16 @@
 ## 五. .vue单文件引入css问题
  1. +如果在单文件中通过`@import '../base.css'`方式引入的css  则为全局的样式的css style 设置 scoped 无效
 ## 六. 项目引入文件路径的配置
-+ `@`代表src这个目录
-+ `webpack.base.conf.js` 配置
+1. +`@`代表src这个目录
+2. +`webpack.base.conf.js` 配置
       ```
-      resolve: {
-          extensions: ['.js', '.vue', '.json'],
-          alias: {
-            'vue$': 'vue/dist/vue.esm.js',
-            '@': resolve('src'),
+        resolve: {
+            extensions: ['.js', '.vue', '.json'],
+            alias: {
+              'vue$': 'vue/dist/vue.esm.js',
+              '@': resolve('src'),
+            }
           }
-        }
       ```
 ## 移除严格模式
 [babel-plugin-transform-remove-strict-mode](https://github.com/genify/babel-plugin-transform-remove-strict-mode)
