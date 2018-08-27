@@ -31,9 +31,10 @@
         import $ from 'zepto'
         ```
 ## 二.  Vue-cli打包后`vendor.js`体积过大
-  1. 第三方的依赖库 外部引入模块(CDN)
+  ### 在一个vue项目打包的 vender.js 足足 1.2M
+  1. 解决方法: 打包 `vender` 时不打包 `vue、vuex、vue-router、axios` 等，换用国内的 bootcdn 直接引入到 `index.html` 中
 
-  2. `webpack.base.conf.js` 修改配置 module.exports添加
+  2. 修改配置 在`webpack.base.conf.js` 修改配置 module.exports添加
         ```
           // 配置cdn引入的文件 告诉webpack不用打包哪些文件
           externals: {
@@ -44,11 +45,13 @@
             "weui":"weui"
           }
         ```
+      此时的 `vender` 包会非常小，如果不够小还可以拆分其他的库，此时增加了请求的数量，但是远比加载一个 1.2M 的 `vender` 快的多
+ 3. 使用按需导入的方式导入模块的体积增大,合理使用
 
 ## 三. 首屏加载过慢
 
    1. +原因:当打包构建应用时，Javascript 包会变得非常大，影响页面加载。如果我们能把不同路由对应的组件分割成不同的代码块，然后当路由被访问的时候才加载对应组件，这样就更加高效了。
-      路由懒加载
+    解决方案:  路由懒加载
         ```
         {
           path: '/SalesDetails',
