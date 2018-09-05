@@ -26,8 +26,9 @@
           }
       ```
     6. 如果需要全局引入可以在`main.js`中
-  
-        import $ from 'zepto'
+        ```
+          import $ from 'zepto'
+        ```
        
 ## 二.  Vue-cli打包后`vendor.js`体积过大
   ### 在一个vue项目打包的 vender.js 足足 1.2M
