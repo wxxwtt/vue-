@@ -132,9 +132,11 @@
   + 优点: 利于维护,实现组件的复用性,推荐使用此方法
   + 注意: 有些像 `SASS` 之类的预处理器无法正确解析  "`>>>`" 。这种情况下你可以用  "`/deep/`"  操作符取而代之 —— 这是一个 "`>>>`" 的别名，同样可以正常工作。
   + 补充: 
-  
+
     1、通过 `v-html` 创建的 DOM 内容不受作用域内的样式影响，但是你仍然可以通过深度作用选择器来为他们设置样式
+
     2、CSS 作用域不能代替 class
+    
     3、在递归组件中小心使用后代选择器
 ## 移除严格模式
 [babel-plugin-transform-remove-strict-mode](https://github.com/genify/babel-plugin-transform-remove-strict-mode)
