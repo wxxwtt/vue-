@@ -28,7 +28,7 @@
     6. 如果需要全局引入可以在`main.js`中
   
         ```
-        import $ from 'zepto'
+            import $ from 'zepto'
         ```
 ## 二.  Vue-cli打包后`vendor.js`体积过大
   ### 在一个vue项目打包的 vender.js 足足 1.2M
@@ -136,7 +136,7 @@
     1、通过 `v-html` 创建的 DOM 内容不受作用域内的样式影响，但是你仍然可以通过深度作用选择器来为他们设置样式
 
     2、CSS 作用域不能代替 class
-    
+
     3、在递归组件中小心使用后代选择器
 ## 移除严格模式
 [babel-plugin-transform-remove-strict-mode](https://github.com/genify/babel-plugin-transform-remove-strict-mode)
