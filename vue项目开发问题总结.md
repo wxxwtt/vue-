@@ -88,7 +88,7 @@
             }
           }
       ```
-## 六.上传到远程仓库github 在down下来 运行项目报错
+## 七.上传到远程仓库github 在down下来 运行项目报错
   + 在项目的根目录创建一个`.postcssrc.js`文件  在文件里添加
   ```
     // https://github.com/michael-ciniawsky/postcss-load-config
