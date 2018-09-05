@@ -88,5 +88,19 @@
             }
           }
       ```
+## 六.上传到远程仓库github 在down下来 运行项目报错
+  + 在项目的根目录创建一个`.postcssrc.js`文件  在文件里添加
+  ```
+    // https://github.com/michael-ciniawsky/postcss-load-config
+      module.exports = {
+        "plugins": {
+          "postcss-import": {},
+          "postcss-url": {},
+          // to edit target browsers: use "browserslist" field in package.json
+          "autoprefixer": {}
+        }
+      }
+  ```
+
 ## 移除严格模式
 [babel-plugin-transform-remove-strict-mode](https://github.com/genify/babel-plugin-transform-remove-strict-mode)
