@@ -133,10 +133,26 @@
   + 注意: 有些像 `SASS` 之类的预处理器无法正确解析  "`>>>`" 。这种情况下你可以用  "`/deep/`"  操作符取而代之 —— 这是一个 "`>>>`" 的别名，同样可以正常工作。
   + 补充: 
 
-    1、通过 `v-html` 创建的 DOM 内容不受作用域内的样式影响，但是你仍然可以通过深度作用选择器来为他们设置样式
+    1、通过 `v-html` 创建的 `DOM` 内容不受作用域内的样式影响，但是你仍然可以通过深度作用选择器来为他们设置样式
 
     2、CSS 作用域不能代替 class
 
     3、在递归组件中小心使用后代选择器
+## 九. 配置代理进行接口转发
+  + 找到 `config/index.js`文件 在 `dev` 对象中找到 `proxyTable:{}` 属性, 进行如下配置
+    ```
+    // 代理配置
+    proxyTable: {
+      '/api':{ //路径
+        target:'http://localhost:8080',//目标接口地址
+        secure:false, //是否支持https
+        changeOrigin:true, //是否支持跨域
+        pathRewrite:{ //路径重写 
+          '^/api':'/static/mock'//正则匹配 "/api" 替换成 "/static/mock"路径 http://localhost:8080/pai/json ==> http://localhost:8080/static/mock/json
+
+        }
+      }
+    }
+    ```
 ## 移除严格模式
 [babel-plugin-transform-remove-strict-mode](https://github.com/genify/babel-plugin-transform-remove-strict-mode)
