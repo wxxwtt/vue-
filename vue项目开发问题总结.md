@@ -138,10 +138,20 @@
     2、CSS 作用域不能代替 class
 
     3、在递归组件中小心使用后代选择器
-## 九. 配置代理进行接口转发
-  + 找到 `config/index.js`文件 在 `dev` 对象中找到 `proxyTable:{}` 属性, 进行如下配置
+## 九. 接口联调
+  + 在前后端接口联调时,往往会出现跨域问题 找到 `config/index.js`文件 在 `dev` 对象中找到 `proxyTable:{}` 属性, 进行如下配置
     ```
-    // 代理配置
+    // 接口联调配置
+    proxyTable: {
+      '/api':{ //路径
+        target:'http://localhost:3000',//目标接口地址
+        secure:false, //是否支持https
+        changeOrigin:true, //是否支持跨域
+      }
+    }
+    ```
+    在本机调试开发时,可使用下面配置
+    ```
     proxyTable: {
       '/api':{ //路径
         target:'http://localhost:8080',//目标接口地址
